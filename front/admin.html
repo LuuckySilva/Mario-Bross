@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Admin — Mario & Luigi</title>
+  <link rel="stylesheet" href="admin.css">
+</head>
+
+<body>
+
+  <!-- LOGIN -->
+  <div class="login-screen" id="loginScreen">
+    <div class="login-box">
+      <img src="./assets/logo-header.png" alt="logo mario">
+      <h2>Painel Admin</h2>
+      <input type="password" id="senhaInput" placeholder="Digite a senha">
+      <button onclick="fazerLogin()">Entrar</button>
+      <p class="erro-login" id="erroLogin">Senha incorreta.</p>
+    </div>
+  </div>
+
+  <!-- PAINEL -->
+  <div class="painel" id="painel" style="display:none">
+
+    <div class="painel-header">
+      <img src="./assets/logo-header.png" alt="logo">
+      <h1>Orçamentos Recebidos</h1>
+      <div class="filtros">
+        <button onclick="filtrar('todos')" class="btn-filtro ativo" id="f-todos">Todos</button>
+        <button onclick="filtrar('pendente')" class="btn-filtro" id="f-pendente">Pendentes</button>
+        <button onclick="filtrar('resolvido')" class="btn-filtro" id="f-resolvido">Resolvidos</button>
+      </div>
+      <button onclick="sair()" class="btn-sair">Sair</button>
+    </div>
+
+    <div class="cards" id="cards">
+      <p class="carregando">Carregando orçamentos...</p>
+    </div>
+
+  </div>
+
+  <script src="admin.js"></script>
+</body>
+
+</html>

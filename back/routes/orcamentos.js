@@ -43,4 +43,22 @@ router.get('/', async (req, res) => {
   res.json(db.orcamentos);
 });
 
+router.patch('/:id', async (req, res) => {
+  const { id } = req.params;
+  const { status } = req.body;
+
+  const db = await lerDB();
+  const index = db.orcamentos.findIndex(o => o.id === id);
+
+  if (index === -1) {
+    return res.status(404).json({ erro: 'Orçamento não encontrado.' });
+  }
+
+  db.orcamentos[index].status = status;
+  await salvarDB(db);
+
+  res.json({ sucesso: true, orcamento: db.orcamentos[index] });
+});
+
 module.exports = router;
+
