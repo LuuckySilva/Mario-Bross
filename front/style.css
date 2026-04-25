@@ -188,3 +188,18 @@ textarea {
         font-size: 20px;
     }
 }
+/* Formulário visível */
+.fale-conosco.ativo {
+    left: 20px;
+}
+
+/* Máscara visível */
+.mascara-formulario.ativo {
+    visibility: visible;
+    z-index: 1;
+}
+
+/* Formulário acima da máscara */
+.fale-conosco {
+    z-index: 2;
+}
