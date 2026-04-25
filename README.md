@@ -13,6 +13,9 @@
 
 ## 🚀 Demo
 
+<img width="1890" height="908" alt="image" src="https://github.com/user-attachments/assets/6132952d-a1d4-4bf8-90ea-74fbf4484d23" />
+
+
 🌐 **Site:** [mario-bross-six.vercel.app](https://mario-bross-six.vercel.app)
 🔗 **API:** [mario-luigi-api.onrender.com](https://mario-luigi-api.onrender.com)
 🛠 **Painel Admin:** `https://mario-bross-six.vercel.app/admin.html`
