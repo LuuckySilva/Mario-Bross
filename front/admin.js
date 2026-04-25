@@ -1,4 +1,4 @@
-const API_URL = 'http://localhost:3000';
+const API_URL = 'https://mario-luigi-api.onrender.com';
 const SENHA = 'mario123'; // trocar antes do deploy
 
 let todosOrcamentos = [];

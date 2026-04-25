@@ -5,8 +5,16 @@
       "nome": "HUNGRIA",
       "telefone": "35984128081",
       "duvida": "2 BANHEIROS ENTUPIDOS E COM VAZAMENTO",
-      "status": "pendente",
+      "status": "resolvido",
       "criadoEm": "2026-04-25T13:52:13.896Z"
+    },
+    {
+      "id": "1777137584085",
+      "nome": "maria junivel",
+      "telefone": "35984128081",
+      "duvida": "ee",
+      "status": "resolvido",
+      "criadoEm": "2026-04-25T17:19:44.085Z"
     }
   ]
 }
