@@ -1,4 +1,50 @@
 const API_URL = 'https://mario-luigi-api.onrender.com';
+// Formulário da seção Fale Conosco
+const formContato = document.getElementById('formContato');
+
+formContato.addEventListener('submit', async (e) => {
+  e.preventDefault();
+
+  const btn = formContato.querySelector('button[type="submit"]');
+  const nome = formContato.nome.value.trim();
+  const telefone = formContato.telefone.value.trim();
+  const duvida = formContato.duvida.value.trim();
+
+  if (!nome || !telefone || !duvida) {
+    alert('Preencha todos os campos!');
+    return;
+  }
+
+  btn.textContent = 'Enviando...';
+  btn.disabled = true;
+
+  try {
+    const response = await fetch(`${API_URL}/orcamentos`, {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify({ nome, telefone, duvida })
+    });
+
+    const data = await response.json();
+
+    if (response.ok) {
+      btn.textContent = 'Enviado! ✅';
+      formContato.reset();
+      setTimeout(() => {
+        btn.textContent = 'Enviar Mensagem 🍄';
+        btn.disabled = false;
+      }, 2000);
+    } else {
+      alert(data.erro || 'Erro ao enviar.');
+      btn.textContent = 'Enviar Mensagem 🍄';
+      btn.disabled = false;
+    }
+  } catch (err) {
+    alert('Servidor offline. Tente mais tarde.');
+    btn.textContent = 'Enviar Mensagem 🍄';
+    btn.disabled = false;
+  }
+});
 
 document.addEventListener('DOMContentLoaded', () => {
 

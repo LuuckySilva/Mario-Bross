@@ -14,12 +14,12 @@
 
     <div class="header">
         <img src="./assets/logo-header.png" alt="logo mario">
-        <a>Home</a>
-        <a>Nossos Serviços</a>
-        <a>Fale Conosco</a>
+       <a href="#inicio">Home</a>
+<a href="#servicos">Nossos Serviços</a>
+<a href="#contato">Fale Conosco</a>
     </div>
 
-    <div class="caixa-mae">
+    <div class="caixa-mae" id="inicio"> 
         <div class="caixa-principal">
             <img src="./assets/logo.png" alt="logo do mario bros" class="logo-mario">
             <p>Encanadores Mario & Luigi - Resolvemos seus problemas com Estilo!</p>
@@ -32,6 +32,91 @@
             <img src="./assets/mario.png" alt="mario e luigi" class="imagem-mario-luigi">
         </div>
     </div>
+
+    <!-- SEÇÃO NOSSOS SERVIÇOS -->
+<section class="servicos" id="servicos">
+  <div class="servicos-header">
+    <h2>Nossos Serviços</h2>
+    <p>Do Reino dos Cogumelos até sua casa — resolvemos qualquer problema!</p>
+  </div>
+
+  <div class="servicos-grid">
+
+    <div class="servico-card">
+      <div class="servico-icone">🔧</div>
+      <h3>Conserto de Vazamentos</h3>
+      <p>Identificamos e eliminamos vazamentos em canos, torneiras e registros com agilidade e precisão.</p>
+      <span class="servico-tag">Emergência 24h</span>
+    </div>
+
+    <div class="servico-card">
+      <div class="servico-icone">🚿</div>
+      <h3>Desentupimento</h3>
+      <p>Pias, ralos, vasos sanitários e tubulações — desentupimos tudo sem sujeira e sem dor de cabeça.</p>
+      <span class="servico-tag">Resultado Garantido</span>
+    </div>
+
+    <div class="servico-card">
+      <div class="servico-icone">🏠</div>
+      <h3>Instalações Novas</h3>
+      <p>Instalação completa de encanamento para obras, reformas e ampliações residenciais e comerciais.</p>
+      <span class="servico-tag">Orçamento Grátis</span>
+    </div>
+
+    <div class="servico-card">
+      <div class="servico-icone">⚡</div>
+      <h3>Manutenção Preventiva</h3>
+      <p>Revisão completa do sistema hidráulico antes que o problema apareça. Economize antes que seja tarde.</p>
+      <span class="servico-tag">Agendamento Flexível</span>
+    </div>
+
+  </div>
+</section>
+<!-- SEÇÃO FALE CONOSCO -->
+<section class="contato-secao" id="contato">
+  <div class="contato-grid">
+
+    <div class="contato-info">
+      <h2>Fale Conosco</h2>
+      <p>Atendemos emergências 24h. Entre em contato agora e resolva seu problema com estilo!</p>
+
+      <div class="contato-item">
+        <span>📞</span>
+        <div>
+          <strong>Telefone</strong>
+          <p>(35) 98484-8484</p>
+        </div>
+      </div>
+
+      <div class="contato-item">
+        <span>📍</span>
+        <div>
+          <strong>Localização</strong>
+          <p>Reino dos Cogumelos, Mushroom City</p>
+        </div>
+      </div>
+
+      <div class="contato-item">
+        <span>🕐</span>
+        <div>
+          <strong>Horário</strong>
+          <p>24h por dia, 7 dias por semana</p>
+        </div>
+      </div>
+    </div>
+
+    <div class="contato-formulario">
+      <form class="form-contato" id="formContato">
+        <h3>Solicite um Orçamento</h3>
+        <input placeholder="Seu Nome" type="text" name="nome" required>
+        <input placeholder="Seu Telefone" type="tel" name="telefone" required>
+        <textarea placeholder="Descreva seu problema..." name="duvida" required></textarea>
+        <button type="submit">Enviar Mensagem 🍄</button>
+      </form>
+    </div>
+
+  </div>
+</section>
 
     <div class="caixa-video">
         <video src="./assets/video.mp4" autoplay muted loop></video>
