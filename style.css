@@ -25,8 +25,8 @@ button {
 
 button:hover {
     color: rgb(6, 247, 194);
-    font-size: 27;
-    transition: 0.5 ease-in-out;
+    font-size: 27px;
+    transition: 0.5s ease-in-out;
 }
 
 .imagem-mario-luigi {
@@ -40,14 +40,14 @@ body {
 .caixa-mae {
     display: flex;
     align-items: center;
-    padding: 100px;
+    padding: 40px 100px;
     height: 100vh;
     justify-content: space-around;
 }
 
 .caixa-principal {
     width: 40%;
-    color:white;
+    color: white;
 }
 
 .caixa-video {
@@ -58,17 +58,23 @@ body {
 }
 
 video {
-    width: 100%;
-    min-width: 100%;
+    width: 100vw;
+    height: 100vh;
+    object-fit: cover;
     position: fixed;
     top: 0;
-
+    left: 0;
 }
 
 .mascara {
     height: 100%;
     width: 100%;
-    background: linear-gradient(109deg, rgba(10, 12, 16, 0.99) 15%, rgba(10, 12, 16, 0.7) 50%, rgba(10, 12, 16, 0.99) 85%);
+    background: linear-gradient(
+        109deg,
+        rgba(10, 12, 16, 0.92) 15%,
+        rgba(10, 12, 16, 0.72) 50%,
+        rgba(10, 12, 16, 0.92) 85%
+    );
     position: fixed;
     top: 0;
 }
@@ -78,7 +84,7 @@ video {
     position: fixed;
     right: 20px;
     bottom: 20px;
-    
+
 }
 
 .header {
@@ -144,7 +150,7 @@ textarea {
     transition: visibility 1s ease-in-out;
 }
 
-@media(max-width: 110px) {
+@media (max-width: 768px) {
 
     p {
         display: none;
@@ -171,11 +177,11 @@ textarea {
         margin: 10px;
         display: flex;
         align-items: center;
-        justify-content:flex-start; 
+        justify-content: flex-start;
     }
 
     .header img {
-        display: nonne;
+        display: none;
     }
 
     .header a {
