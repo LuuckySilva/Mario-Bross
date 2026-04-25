@@ -45,6 +45,56 @@ formContato.addEventListener('submit', async (e) => {
     btn.disabled = false;
   }
 });
+// ===== CARROSSEL DE DEPOIMENTOS =====
+const cards = document.querySelectorAll('.depoimento-card');
+const dots = document.querySelectorAll('.dot');
+let atual = 0;
+
+function mostrarCard(index) {
+  cards.forEach(c => c.classList.remove('ativo'));
+  dots.forEach(d => d.classList.remove('ativo'));
+  cards[index].classList.add('ativo');
+  dots[index].classList.add('ativo');
+}
+
+document.getElementById('btnProximo').addEventListener('click', () => {
+  atual = (atual + 1) % cards.length;
+  mostrarCard(atual);
+});
+
+document.getElementById('btnAnterior').addEventListener('click', () => {
+  atual = (atual - 1 + cards.length) % cards.length;
+  mostrarCard(atual);
+});
+
+dots.forEach((dot, i) => {
+  dot.addEventListener('click', () => {
+    atual = i;
+    mostrarCard(atual);
+  });
+});
+
+// Avança automaticamente a cada 5 segundos
+setInterval(() => {
+  atual = (atual + 1) % cards.length;
+  mostrarCard(atual);
+}, 5000);
+
+// ===== FAQ ACCORDION =====
+document.querySelectorAll('.faq-pergunta').forEach(btn => {
+  btn.addEventListener('click', () => {
+    const item = btn.parentElement;
+    const estaAberto = item.classList.contains('aberto');
+
+    // Fecha todos
+    document.querySelectorAll('.faq-item').forEach(i => i.classList.remove('aberto'));
+
+    // Abre o clicado (se estava fechado)
+    if (!estaAberto) {
+      item.classList.add('aberto');
+    }
+  });
+});
 
 document.addEventListener('DOMContentLoaded', () => {
 
