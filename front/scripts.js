@@ -95,6 +95,54 @@ document.querySelectorAll('.faq-pergunta').forEach(btn => {
     }
   });
 });
+// ===== SCROLL REVEAL =====
+const observer = new IntersectionObserver((entries) => {
+  entries.forEach((entry, i) => {
+    if (entry.isIntersecting) {
+      setTimeout(() => {
+        entry.target.classList.add('visivel');
+      }, i * 100); // delay escalonado por elemento
+      observer.unobserve(entry.target);
+    }
+  });
+}, { threshold: 0.15 });
+
+document.querySelectorAll('[data-reveal]').forEach(el => observer.observe(el));
+
+// ===== CONTADOR ANIMADO =====
+const contadorObserver = new IntersectionObserver((entries) => {
+  entries.forEach(entry => {
+    if (entry.isIntersecting) {
+      animarContadores();
+      contadorObserver.unobserve(entry.target);
+    }
+  });
+}, { threshold: 0.5 });
+
+const secaoContadores = document.querySelector('.contadores');
+if (secaoContadores) contadorObserver.observe(secaoContadores);
+
+function animarContadores() {
+  document.querySelectorAll('.contador-item').forEach(item => {
+    const target = parseInt(item.dataset.target);
+    const el = item.querySelector('.contador-numero');
+    const duracao = 2000; // ms
+    const intervalo = 30;
+    const passos = duracao / intervalo;
+    const incremento = target / passos;
+    let atual = 0;
+
+    const timer = setInterval(() => {
+      atual += incremento;
+      if (atual >= target) {
+        el.textContent = target;
+        clearInterval(timer);
+      } else {
+        el.textContent = Math.floor(atual);
+      }
+    }, intervalo);
+  });
+}
 
 document.addEventListener('DOMContentLoaded', () => {
 
